@@ -40,17 +40,23 @@ public :
 
 void snakeBody::drawSnake()         // DRAWING THE WHOLE SNAKE
 {
-     for(int i=0; i<length ; i++)
+    for(int i=0; i<length ; i++)
      {
           setcolor(BLUE);
-         rectangle(arr[i].x , arr[i].y , arr[i].x+30 , arr[i].y+30);
-          if(i==0)                                      // HEAD IS OF DIFFERENT COLOR
-                  setfillstyle(SOLID_FILL , GREEN);
-          else                                          // REST OF THE BODY
+
+          if(i==0){setcolor(YELLOW);
+
+                  circle(arr[i].x+15 , arr[i].y+15 ,15);
+
+                  }
+          else   {
+        rectangle(arr[i].x+1 , arr[i].y+1 , arr[i].x+30 , arr[i].y+30);// REST OF THE BODY
                   setfillstyle(SOLID_FILL , LIGHTGREEN);
           floodfill(arr[i].x+15 , arr[i].y+15 , BLUE);
+          }
      }
 }
+
 
 void snakeBody::appendSnake()
 {

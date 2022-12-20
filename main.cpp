@@ -20,7 +20,7 @@ int main()
             cleardevice();
             setcolor(BLUE);
 
-            setfillstyle(SOLID_FILL, BLUE);
+            setfillstyle(SOLID_FILL, GREEN);
 
 
             if(GetAsyncKeyState(VK_LEFT))
@@ -47,8 +47,8 @@ int main()
                  body.appendSnake();
             }
 
-            // BOXES
-                 setcolor(BLUE);
+
+                 setcolor(MAGENTA);
                  rectangle(0,0,30,510);
                  rectangle(30,0,480,30);
                  rectangle(480,0,510,510);
@@ -58,16 +58,16 @@ int main()
                  rectangle(780,20,800,250);
                  rectangle(510,490,800,510);
                  rectangle(780,270,800,490);
-                 setfillstyle(SOLID_FILL, BLUE);
-                 floodfill(15,250,BLUE);
-                 floodfill(250,15,BLUE);
-                 floodfill(495,250,BLUE);
-                 floodfill(250,495,BLUE);
-                 floodfill(550,260,BLUE);
-                 floodfill(550,10,BLUE);
-                 floodfill(790,150,BLUE);
-                 floodfill(550,500,BLUE);
-                 floodfill(790,300,BLUE);
+                 setfillstyle(SOLID_FILL, MAGENTA);
+                 floodfill(15,250,MAGENTA);
+                 floodfill(250,15,MAGENTA);
+                 floodfill(495,250,MAGENTA);
+                 floodfill(250,495,MAGENTA);
+                 floodfill(550,260,MAGENTA);
+                 floodfill(550,10,MAGENTA);
+                 floodfill(790,150,MAGENTA);
+                 floodfill(550,500,MAGENTA);
+                 floodfill(790,300,MAGENTA);
 
             // SCORE
                  settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 5);
