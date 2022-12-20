@@ -23,22 +23,22 @@ private:
 public :
         snakeBody()
         {
-              arr[0].x =30 ;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
-              arr[0].y = 30;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
-              length = 2;           // INITILAL LENGTH = 2
-              direction = RIGHT;    // GOING IN RIGHT DIRECTION
+              arr[0].x =30 ;
+              arr[0].y = 30;
+              length = 2;
+              direction = RIGHT;
         }
         void drawSnake();
-        void appendSnake();         // IT IS RESPONSIBLE FOR INCREMENT IN SNAKE'S LENGTH
+        void appendSnake();
         void changeDirTo(int);
         int update();
-        int getPosx();              // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
-        int getPosy();              // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
-        int getlength();            // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
+        int getPosx();
+        int getPosy();
+        int getlength();
 
 };
 
-void snakeBody::drawSnake()         // DRAWING THE WHOLE SNAKE
+void snakeBody::drawSnake()
 {
     for(int i=0; i<length ; i++)
      {
@@ -47,10 +47,26 @@ void snakeBody::drawSnake()         // DRAWING THE WHOLE SNAKE
           if(i==0){setcolor(YELLOW);
 
                   circle(arr[i].x+15 , arr[i].y+15 ,15);
+                  setfillstyle(SOLID_FILL , YELLOW);
+                    floodfill(arr[i].x+15 , arr[i].y+15 , YELLOW);
+
+                    setcolor(MAGENTA);
+    setfillstyle(SOLID_FILL, MAGENTA);
+
+    fillellipse(arr[i].x+20 , arr[i].y+9, 2, 4);
+    fillellipse(arr[i].x+10 , arr[i].y+9, 2, 4);
+
+      setcolor(DARKGRAY);
+
+    ellipse(arr[i].x+15, arr[i].y+10, 225, 310 , 20, 10);
+     ellipse(arr[i].x+15, arr[i].y+8, 217, 323, 16, 17);
+     setfillstyle(SOLID_FILL , DARKGRAY);
+
+
 
                   }
           else   {
-        rectangle(arr[i].x+1 , arr[i].y+1 , arr[i].x+30 , arr[i].y+30);// REST OF THE BODY
+        rectangle(arr[i].x+1 , arr[i].y+1 , arr[i].x+30 , arr[i].y+30);
                   setfillstyle(SOLID_FILL , LIGHTGREEN);
           floodfill(arr[i].x+15 , arr[i].y+15 , BLUE);
           }
@@ -60,7 +76,7 @@ void snakeBody::drawSnake()         // DRAWING THE WHOLE SNAKE
 
 void snakeBody::appendSnake()
 {
-     if(length < 30)                            // PREVENTS THE LENGTH FROM GOING GREATER THAN 29
+     if(length < 30)
         length++;
 }
 
@@ -78,13 +94,13 @@ void snakeBody::changeDirTo(int newdir)
      }
 }
 
-int snakeBody::update()                                                     // THIS FUNCTION ENFORCES THE BASIC
-{                                                                           // ALGORITHM FOR MOVING SNAKE
-     for(int i=1 ; i<length ; ++i)                                          // BY PROVIDING ALL THE PREVIOUS PARTS
-     {                                                                      // THE COORDINATES OF CURRENT PART
-             if(arr[0].x == arr[i].x && arr[0].y == arr[i].y)               // HENCE [1] GETS THE POSITION OF [0]
-             {                                                              // [2] GETS THE POSITION OF [1] AND SO ON...
-                         return 0;                                          // AND LASTLY HEAD([0]) IS GIVEN LATEST VALUES
+int snakeBody::update()
+{
+     for(int i=1 ; i<length ; ++i)
+     {
+             if(arr[0].x == arr[i].x && arr[0].y == arr[i].y)
+             {
+                         return 0;
              }
      }
      for(int i=length ; i>=0 ; --i)
