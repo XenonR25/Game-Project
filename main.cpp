@@ -20,7 +20,7 @@ int main()
             cleardevice();
             setcolor(BLUE);
 
-            setfillstyle(SOLID_FILL, GREEN);
+            setfillstyle(SOLID_FILL,BLUE);
 
 
             if(GetAsyncKeyState(VK_LEFT))

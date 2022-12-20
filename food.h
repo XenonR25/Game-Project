@@ -13,10 +13,16 @@ public :
 
 void food::draw()                       // DRAW THE FOOD
 {
-     setcolor(RED);
-     rectangle(foodPos.x, foodPos.y, foodPos.x+30, foodPos.y+30);
-     setfillstyle(INTERLEAVE_FILL, RED);
-     floodfill(foodPos.x+15, foodPos.y+15, RED);
+     setcolor(CYAN);
+     line(foodPos.x+15, foodPos.y, foodPos.x, foodPos.y+23);
+     line(foodPos.x, foodPos.y+23, foodPos.x+30, foodPos.y+23);
+     line(foodPos.x+30, foodPos.y+23, foodPos.x+15, foodPos.y);
+
+     line(foodPos.x+15, foodPos.y+30, foodPos.x, foodPos.y+8);
+     line(foodPos.x+30, foodPos.y+8, foodPos.x, foodPos.y+8);
+     line(foodPos.x+30, foodPos.y+8, foodPos.x+15, foodPos.y+30);
+     setfillstyle(SOLID_FILL, CYAN);
+     floodfill(foodPos.x+15, foodPos.y+15, CYAN);
 }
 
 void food::generate(int snakeHeadx, int snakeHeady)     // GENERATE NEW POSITION FOR THE PARTICLE
