@@ -33,6 +33,7 @@ void food::generate(int snakeHeadx, int snakeHeady)     // GENERATE NEW POSITION
      foodPos.y = 30*(rand()%15 + 1);
      if (foodPos.x == snakeHeadx && foodPos.y == snakeHeady)
           generate(snakeHeadx, snakeHeady);
+
 }
 
 bool food::update(int snakeHeadx, int snakeHeady)       // GIVE US THE STATUS OF THAT DAMN FOOD !!

@@ -9,7 +9,7 @@ int main()
     food fruit;
     int length,count=0;
     bool playing=true;
-    char lengtharr[3];
+    char lengtharr[3],arr[3];
     fruit.generate(body.getPosx(), body.getPosy());
     int page=0;
 
@@ -48,7 +48,7 @@ int main()
             }
 
 
-                 setcolor(MAGENTA);
+                 setcolor(WHITE);
                  rectangle(0,0,30,510);
                  rectangle(30,0,480,30);
                  rectangle(480,0,510,510);
@@ -59,24 +59,29 @@ int main()
                  rectangle(510,490,800,510);
                  rectangle(780,270,800,490);
                  setfillstyle(SOLID_FILL, MAGENTA);
-                 floodfill(15,250,MAGENTA);
-                 floodfill(250,15,MAGENTA);
-                 floodfill(495,250,MAGENTA);
-                 floodfill(250,495,MAGENTA);
-                 floodfill(550,260,MAGENTA);
-                 floodfill(550,10,MAGENTA);
-                 floodfill(790,150,MAGENTA);
-                 floodfill(550,500,MAGENTA);
-                 floodfill(790,300,MAGENTA);
+                 floodfill(15,250,WHITE);
+                 floodfill(250,15,WHITE);
+                 floodfill(495,250,WHITE);
+                 floodfill(250,495,WHITE);
+                 floodfill(550,260,WHITE);
+                 floodfill(550,10,WHITE);
+                 floodfill(790,150,WHITE);
+                 floodfill(550,500,WHITE);
+                 floodfill(790,300,WHITE);
 
-            // SCORE
+
                  settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 5);
                  setcolor(GREEN);
-                 outtextxy(550, 70, "LENGTH");
-                 outtextxy(520, 130, "ACHIEVED");
+                 outtextxy(520,50, "LENGTH:-");
+                     length = body.getlength();
+                  arr[0]=char(48+length/10);
+                  arr[1]=char(48+length%10);
+                  arr[2]='\0';
+                 outtextxy(620, 100, arr);
+                 outtextxy(520, 145, "SCORE:-");
                  length = body.getlength();
                  lengtharr[0]=char(48+length/10);
-                 lengtharr[1]=char(48+length%10);
+                 lengtharr[1]=char(46+length%10);
                  lengtharr[2]='\0';
                  outtextxy(620, 190, lengtharr);
 
@@ -103,7 +108,7 @@ int main()
 
             fruit.draw();
             page = 1-page;
-            delay(100);
+            delay(150);
     }
 
     getch();
